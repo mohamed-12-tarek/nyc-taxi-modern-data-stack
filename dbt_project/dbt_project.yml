@@ -1,0 +1,27 @@
+name: nyc_taxi_platform
+version: "1.0.0"
+config-version: 2
+profile: nyc_taxi_platform
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # trips with a pickup date before this are treated as bad data (TLC files contain stray 2001/2008 dates)
+  min_valid_date: "2019-01-01"
+
+seeds:
+  nyc_taxi_platform:
+    +schema: silver
+
+models:
+  nyc_taxi_platform:
+    silver:
+      +materialized: table
+      +schema: silver
+    gold:
+      +materialized: table
+      +schema: gold

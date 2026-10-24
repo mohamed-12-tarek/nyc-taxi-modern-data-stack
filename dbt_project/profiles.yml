@@ -1,0 +1,15 @@
+# Credentials come from environment variables (.env) - nothing secret in git.
+# Use with:  dbt <command> --profiles-dir .
+nyc_taxi_platform:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH', '../keys/rsa_key.p8') }}"
+      role: TRANSFORMER_ROLE
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'NYC_TAXI_DB') }}"
+      warehouse: TRANSFORM_WH
+      schema: SILVER
+      threads: 4

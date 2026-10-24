@@ -1,0 +1,16 @@
+.env
+keys/
+.venv/
+__pycache__/
+*.pyc
+dbt_project/target/
+dbt_project/logs/
+dbt_project/dbt_packages/
+airflow/logs/
+data/incoming/*
+data/processed/*
+data/failed/*
+!data/*/.gitkeep
+reports/*
+!reports/.gitkeep
+airflow_metadata_backup.sql

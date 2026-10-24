@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: daily_trips
+    columns:
+      - name: pickup_date
+        tests: [unique, not_null]
+  - name: monthly_summary
+    columns:
+      - name: pickup_month
+        tests: [unique, not_null]
+  - name: hourly_demand
+    columns:
+      - name: pickup_hour
+        tests: [not_null]
+  - name: zone_performance
+    columns:
+      - name: pickup_location_id
+        tests: [unique, not_null]
+  - name: payment_analysis
+    columns:
+      - name: payment_type_desc
+        tests: [unique, not_null]
+  - name: route_popularity
+    columns:
+      - name: route_rank
+        tests: [unique, not_null]
+  - name: data_quality_by_file
+    columns:
+      - name: source_file
+        tests: [unique, not_null]

@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_yellow_trips
+    description: Cleaned, enriched and deduplicated yellow taxi trips
+    columns:
+      - name: trip_id
+        tests: [unique, not_null]
+      - name: pickup_datetime
+        tests: [not_null]
+      - name: payment_type_desc
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Flex Fare', 'Credit card', 'Cash', 'No charge', 'Dispute', 'Unknown', 'Voided', 'Other']
+      - name: pickup_location_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_zones')
+                field: location_id
+              config:
+                severity: warn
+      - name: total_amount
+        tests: [not_null]
+
+  - name: dim_zones
+    description: Taxi zones (borough / zone / service zone)
+    columns:
+      - name: location_id
+        tests: [unique, not_null]

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: "{{ env_var('SNOWFLAKE_DATABASE', 'NYC_TAXI_DB') }}"
+    schema: BRONZE
+    tables:
+      - name: yellow_trips_raw
+        description: TLC yellow taxi trips exactly as received from the monthly Parquet files
