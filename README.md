@@ -379,7 +379,7 @@ Contributions are welcome.
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Released under the [Apache License](LICENSE).
 
 ## Acknowledgements and disclaimer
 
