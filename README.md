@@ -381,6 +381,10 @@ Contributions are welcome.
 
 Released under the [Apache License](LICENSE).
 
+## Report
+
+For More Details You can Read The Report [[NYC_Taxi_Platform_Report](https://github.com/user-attachments/files/33921412/NYC_Taxi_Platform_Report.pdf)]
+
 ## Acknowledgements and disclaimer
 
 - Trip data: [NYC Taxi & Limousine Commission (TLC) Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), publicly available. TLC publishes data with a delay of roughly two months and may adjust file schemas over time.
